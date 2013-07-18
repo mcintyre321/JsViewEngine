@@ -10,7 +10,32 @@ namespace JsViewEngine.Controllers
     {
         public ActionResult Index()
         {
-            return View(new  { Name = "Hello" });
+            return RedirectToAction("Knockout");
+            
+        }
+
+        public ActionResult Knockout()
+        {
+            return View(new
+            {
+                people = new[]
+                {
+                    new {firstName="Bert", lastName ="Bertington"},
+                    new { firstName= "Charles", lastName= "Charlesforth" },
+                }
+  });
+        }
+
+        public ActionResult JsRender()
+        {
+            return View(
+                new
+                {
+                    name = "Robert",
+                    nickname = "Bob",
+                    showNickname = true
+
+                });
         }
     }
 }

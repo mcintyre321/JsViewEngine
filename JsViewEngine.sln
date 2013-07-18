@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsViewEngine", "JsViewEngine\JsViewEngine.csproj", "{015914D2-E987-4CF7-9D18-1FD0B8ABAAFC}"
 EndProject
 Global

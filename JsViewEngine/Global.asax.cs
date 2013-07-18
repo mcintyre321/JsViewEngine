@@ -44,7 +44,7 @@ namespace JsViewEngine
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            ViewEngines.Engines.Add(new Infrastructure.JsViewEngine());
+            ViewEngines.Engines.Add(new Infrastructure.JsViewEngine(new JsRenderTemplateLibrary()));
 
             BundleTable.Bundles.RegisterTemplateBundles();
         }
