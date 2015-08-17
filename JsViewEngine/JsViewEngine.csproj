@@ -25,6 +25,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,8 +49,9 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Jurassic">
-      <HintPath>..\packages\Jurassic.2.1.1\lib\Jurassic.dll</HintPath>
+    <Reference Include="Jurassic, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Jurassic.2.2.0\lib\Jurassic.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -138,12 +141,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\HandlebarsTemplateLibrary.cs" />
     <Compile Include="Infrastructure\JavascriptTemplateLibrary.cs" />
     <Compile Include="Infrastructure\JsRenderTemplateLibrary.cs" />
     <Compile Include="Infrastructure\JsViewEngine.cs" />
     <Compile Include="Infrastructure\JavascriptView.cs" />
     <Compile Include="Infrastructure\JsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\express-hbs.js" />
+    <Content Include="Scripts\handlebars-v3.0.3.js" />
     <Content Include="Scripts\jsrender.js" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +197,12 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
+    <Content Include="Views\Home\HandlebarsLayout.hbs">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Views\Home\Handlebars.hbs">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -218,9 +230,6 @@
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\Knockout.knockoutjs.html">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Views\Home\JsRender.jsrender.html">
       <SubType>Designer</SubType>
     </Content>

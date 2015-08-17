@@ -7,7 +7,7 @@ namespace JsViewEngine.Infrastructure
         public abstract void CreateRenderFunction(ScriptEngine engine);
         
 
-        public abstract string LibraryPath { get; }
+        public abstract string[] LibraryPath { get; }
         public abstract string Extension { get; }
     }
 }

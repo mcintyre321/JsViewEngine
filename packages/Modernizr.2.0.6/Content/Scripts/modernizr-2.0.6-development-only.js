@@ -1,40 +1,10 @@
 /*!
-* Note:  While Microsoft is not the author of this script file, Microsoft
-* grants you the right to use this file for the sole purpose of either: 
-* (i) interacting through your browser with the Microsoft website, subject 
-* to the website's terms of use; or (ii) using the files as included with a
-* Microsoft product subject to the Microsoft Software License Terms for that
-* Microsoft product. Microsoft reserves all other rights to the files not 
-* expressly granted by Microsoft, whether by implication, estoppel or
-* otherwise. The notices and licenses below are for informational purposes 
-* only.
-*
-* Provided by Informational Purposes Only
-* MIT License
-*
-* Permission is hereby granted, free of charge, to any person obtaining a
-* copy of this software and associated documentation files (the "Software"),
-* to deal in the Software without restriction, including without limitation
-* the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-* and/or sell copies of the Software, and to permit persons to whom the 
-* Software is furnished to do so, subject to the following conditions:
-*
-* The copyright notice and this permission notice shall be included in all 
-* copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
-* OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-* DEALINGS IN THE SOFTWARE.
-*
-* Modernizr v2.0.6
-* http://www.modernizr.com
-*
-* Copyright (c) 2009-2011 Faruk Ates, Paul Irish, Alex Sexton
-*/
+ * Modernizr v2.0.6
+ * http://www.modernizr.com
+ *
+ * Copyright (c) 2009-2011 Faruk Ates, Paul Irish, Alex Sexton
+ * Dual-licensed under the BSD or MIT licenses: www.modernizr.com/license/
+ */
 
 /*
  * Modernizr tests which native CSS3 and HTML5 features are available in
@@ -142,20 +112,6 @@ window.Modernizr = (function( window, document, undefined ) {
     // adapted from matchMedia polyfill
     // by Scott Jehl and Paul Irish
     // gist.github.com/786768
-    /*
-     * The following excerpt, obtained from the above-cited github project, is provided for information purposes only.
-     *
-     * matchMedia() polyfill - test whether a CSS media type or media query applies
-     * primary author: Scott Jehl
-     * Copyright (c) 2010 Filament Group, Inc
-     * MIT license
-     * adapted by Paul Irish to use the matchMedia API
-     * http://dev.w3.org/csswg/cssom-view/#dom-window-matchmedia
-     * which webkit now supports: http://trac.webkit.org/changeset/72552
-     *
-     * Doesn't implement media.type as there's no way for crossbrowser property
-     * getters. instead of media.type == 'tv' just use media.matchMedium('tv')
-     */
     testMediaQuery = function( mq ) {
 
       if ( window.matchMedia ) {

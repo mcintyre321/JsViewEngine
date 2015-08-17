@@ -20,18 +20,23 @@ namespace JsViewEngine.Infrastructure
         {
             var engine = new Jurassic.ScriptEngine();
             engine.SetGlobalValue("Model", new JsViewModel(engine, viewContext.ViewData.Model));
-            
-            string jsRenderPath = viewContext.HttpContext.Server.MapPath(_templateLibrary.LibraryPath);
-            var jsRender = File.ReadAllText(jsRenderPath);
-            
-            engine.Execute(jsRender);
+
+            foreach (var libraryPath in _templateLibrary.LibraryPath)
+            {
+
+                string jsRenderPath = viewContext.HttpContext.Server.MapPath(libraryPath);
+                var jsRender = File.ReadAllText(jsRenderPath);
+
+                engine.Execute(jsRender);
+            }
             using (var stream = VirtualPathProvider.OpenFile(_virtualPath.TrimStart('~')))
             using (var streamReader = new StreamReader(stream))
             {
                 engine.SetGlobalValue("rawTemplate", streamReader.ReadToEnd());
             }
-            engine.Execute("var output = render(Model, rawTemplate);");
             _templateLibrary.CreateRenderFunction(engine);
+
+            engine.Execute("var output = render(Model, rawTemplate);");
          
             viewContext.Writer.WriteLine((engine.GetGlobalValue<string>("output")));
         }
